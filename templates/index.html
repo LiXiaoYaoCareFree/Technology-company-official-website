@@ -210,12 +210,13 @@
     <section id="team-intro" class="team-intro section-bg">
       <h2 class="title1">团队介绍</h2>
       <div class="team-members">
+        {% for item in team %}
         <div class="team-member">
           <div class="profile-image">
-            <img src="{% static 'images/董事长.jpg' %}" alt="">
+            <img src="media/{{ item.avatar }}" alt="">
           </div>
-          <h4 class="name">董事长</h4>
-          <p class="position">董事长</p>
+          <h4 class="name">{{ item.name }}</h4>
+          <p class="position">{{ item.title }}</p>
           <ul class="social-links">
             <li><i class="fa fa-weixin"></i></li>
             <li><i class="fa fa-weibo"></i></li>
@@ -223,45 +224,7 @@
             <li><i class="fa fa-linkedin-square "></i></li>
           </ul>
         </div>
-        <div class="team-member">
-          <div class="profile-image">
-            <img src="{% static 'images/ceo.jpg' %}" alt="">
-          </div>
-          <h4 class="name">CEO</h4>
-          <p class="position">CEO</p>
-          <ul class="social-links">
-            <li><i class="fa fa-weixin"></i></li>
-            <li><i class="fa fa-weibo"></i></li>
-            <li><i class="fa fa-github"></i></li>
-            <li><i class="fa fa-linkedin-square"></i></li>
-          </ul>
-        </div>
-        <div class="team-member">
-          <div class="profile-image">
-            <img src="{% static 'images/CTO.jpg' %}" alt="">
-          </div>
-          <h4 class="name">CTO</h4>
-          <p class="position">CTO</p>
-          <ul class="social-links">
-            <li><i class="fa fa-weixin"></i></li>
-            <li><i class="fa fa-weibo"></i></li>
-            <li><i class="fa fa-github"></i></li>
-            <li><i class="fa fa-linkedin-square "></i></li>
-          </ul>
-        </div>
-        <div class="team-member">
-          <div class="profile-image">
-            <img src="{% static 'images/hr.jpg' %}" alt="">
-          </div>
-          <h4 class="name">HR</h4>
-          <p class="position">HR</p>
-          <ul class="social-links">
-            <li><i class="fa fa-weixin"></i></li>
-            <li><i class="fa fa-weibo"></i></li>
-            <li><i class="fa fa-github"></i></li>
-            <li><i class="fa fa-linkedin-square "></i></li>
-          </ul>
-        </div>
+        {% endfor %}
       </div>
     </section>
 
