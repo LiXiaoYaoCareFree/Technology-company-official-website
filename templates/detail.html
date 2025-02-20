@@ -9,7 +9,7 @@
     <h2>{{ news.title }}</h2>
     <p>{{ news.created_at }}</p>
     <p>
-        {{ news.content }}
+        {{ news.content|safe }}
     </p>
 </body>
 </html>
