@@ -11,11 +11,14 @@ def index(request):
     # 获取team表中的所有数据
     teams = Team.objects.all().order_by('rank')
     # 获取news表中的所有数据
-    news = News.objects.all().order_by('-created_at')[:3]
+    news = News.objects.filter(category_id=1).order_by('-created_at')[:3]
+    # 获取成功案例
+    cases = News.objects.filter().exclude(category_id=1).order_by('-created_at')[:6]
     return render(request, 'index.html', {
         'slides': slides,
         'team': teams,
         'news': news,
+        'cases': cases,
         })
 
 
